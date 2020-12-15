@@ -23,8 +23,6 @@ public class WebServer {
             Socket clientSocket = serverSocket.accept();
             System.out.println(serverSocket.getInetAddress() + " Connected");
 
-            //Thread thread = new Thread(new WebClientHandler(clientSocket));
-            //thread.start();
             service.submit(new WebClientHandler(clientSocket));
         }
     }
@@ -40,10 +38,8 @@ public class WebServer {
 
     public Integer getPort() throws IOException {
 
-        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Port: 9999");
         return 9999;
-        //return Integer.parseInt(reader.readLine());
     }
 
 }
